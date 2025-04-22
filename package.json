@@ -1,0 +1,39 @@
+{
+    "name": "r2money-auto-bot",
+    "version": "1.0.0",
+    "description": "Automated bot for R2 Money protocol interactions on Sepolia testnet",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": ""
+    },
+    "keywords": [
+      "ethereum",
+      "web3",
+      "defi",
+      "bot",
+      "crypto",
+      "r2money",
+      "sepolia"
+    ],
+    "author": "Airdrop Insiders",
+    "license": "MIT",
+    "bugs": {
+      "url": ""
+    },
+    "homepage": "",
+    "dependencies": {
+      "dotenv": "^16.3.1",
+      "ethers": "^5.7.2",
+      "web3automation": "^1.1.0",
+      "https-proxy-agent": "^7.0.2",
+      "readline": "^1.3.0"
+    },
+    "engines": {
+      "node": ">=16.0.0"
+    }
+  }

